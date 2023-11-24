@@ -24,6 +24,7 @@ Constraints:
 -231 <= x <= 231 - 1
 */
 
+//this solution converts the number to a string, reverses it, and converts back to a number
 var reverse = function(x) {
 
   let isNegative = false;
