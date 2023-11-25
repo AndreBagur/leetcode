@@ -62,6 +62,22 @@ var checkColumns = function(board) {
   return checkRows(rotatedBoard);
 }
 
+var check3by3 = function(board) {
+  var newBoard = [];
+  for (let i = 0; i < 9; i += 3) {
+    for (let j = 0; j < 9; j += 3) {
+      const subgrid = [];
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) {
+          subgrid.push(board[i + k][j + l]);
+        }
+      }
+      newBoard.push(subgrid);
+    }
+  }
+    return checkRows(newBoard)
+}
+
 var isValidSudoku = function(board) {
 
 };
