@@ -52,6 +52,15 @@ var checkRows = function(board) {
   return true
 }
 
+var checkColumns = function(board) {
+  var rotatedBoard = [[],[],[],[],[],[],[],[],[]];
+  for (var i = 0; i < 9; i++) {
+      for (var j = 0; j < 9; j++) {
+          rotatedBoard[i][j] = board[j][i]
+      }
+  }
+  return checkRows(rotatedBoard);
+}
 
 var isValidSudoku = function(board) {
 
