@@ -79,5 +79,5 @@ var check3by3 = function(board) {
 }
 
 var isValidSudoku = function(board) {
-
+  return checkRows(board) && checkColumns(board) && check3by3(board);
 };
