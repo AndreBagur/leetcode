@@ -79,7 +79,10 @@ MinStack.prototype.top = function() {
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-
+  if (this.stack.length > 0) {
+    return this.stack[this.stack.length - 1].min;
+  }
+  return null;
 };
 
 /**
