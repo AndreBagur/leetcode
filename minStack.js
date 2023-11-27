@@ -60,7 +60,9 @@ MinStack.prototype.push = function(val) {
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-
+  if (this.stack.length > 0) {
+    this.stack.pop();
+  }
 };
 
 /**
