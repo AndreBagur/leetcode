@@ -40,7 +40,7 @@ At most 3 * 104 calls will be made to push, pop, top, and getMin.
 */
 
 var MinStack = function() {
-    this.stack = [];
+  this.stack = [];
 };
 
 /**
@@ -48,7 +48,12 @@ var MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(val) {
-
+  if (this.stack.length === 0) {
+    this.stack.push({val: val, min: val});
+  } else {
+    var min = Math.min(this.stack[this.stack.length - 1].min, val );
+    this.stack.push({val: val, min: min});
+  }
 };
 
 /**
