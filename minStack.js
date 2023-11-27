@@ -69,7 +69,10 @@ MinStack.prototype.pop = function() {
  * @return {number}
  */
 MinStack.prototype.top = function() {
-
+  if (this.stack.length > 0) {
+    return this.stack[this.stack.length - 1].val;
+  }
+  return null;
 };
 
 /**
