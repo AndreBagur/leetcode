@@ -1,7 +1,5 @@
 const isValid = require('./validParentheses.js')
 
-
-
 describe('valid parentheses', () => {
   it('handles a basic string', () => {
     expect(isValid('()')).toBe(true);
