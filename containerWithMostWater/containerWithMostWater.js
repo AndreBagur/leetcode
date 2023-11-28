@@ -35,3 +35,5 @@ n == height.length
 var maxArea = function(height) {
 
 };
+
+module.exports = maxArea
