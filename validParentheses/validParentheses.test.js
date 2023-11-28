@@ -1,13 +1,26 @@
 const isValid = require('./validParentheses.js')
 
 describe('valid parentheses', () => {
-  it('handles a basic string', () => {
+  it('should return true for ()', () => {
     expect(isValid('()')).toBe(true);
   })
-  it('handles strings with different brackets', () => {
+  it('should return true for ()[]{}', () => {
     expect(isValid('()[]{}')).toBe(true);
   })
-  it('handles invalid parentheses', () => {
+  it('should return true for {([])}', () => {
+    expect(isValid('{([])}')).toBe(true);
+  })
+  it('should return false for (]', () => {
     expect(isValid('(]')).toBe(false);
   })
+  it('should return false for [}', () => {
+    expect(isValid('[}')).toBe(false);
+  })
+  it('should return false for ({(]}', () => {
+    expect(isValid('({(]}')).toBe(false);
+  })
+  it('should return false for {[(())]}}', () => {
+    expect(isValid('{[(())]}}')).toBe(false);
+  })
+
 })
