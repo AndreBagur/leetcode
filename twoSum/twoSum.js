@@ -39,7 +39,14 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-
+  var hash = {};
+  for (var i = 0; i < nums.length; i++) {
+    if (hash[target - nums[i]] !== undefined) {
+      return [hash[target - nums[i]], i];
+    } else {
+      hash[nums[i]] = i;
+    }
+  }
 };
 
-module.expors = twoSum
+module.exports = twoSum
