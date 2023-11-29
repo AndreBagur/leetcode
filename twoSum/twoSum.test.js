@@ -1,6 +1,6 @@
 const twoSum = require('./twoSum.js');
 
-describe(twoSum, () => {
+describe('twoSum', () => {
   it('returns the correct indexes for a valid input', () => {
     expect(twoSum([2,7,11,15], 9)).toEqual([0,1]);
   });
