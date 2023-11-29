@@ -33,7 +33,15 @@ n == height.length
  * @return {number}
  */
 var maxArea = function(height) {
-
+  var max = 0, left = 0, right = height.length - 1;
+  while (left < right) {
+    var area = (right - left) * Math.min(height[right], height[left]);
+    if (area > max) {
+      max = area;
+    }
+    height[left] <= height[right] ? left++ : right--;
+  }
+  return max;
 };
 
 module.exports = maxArea
