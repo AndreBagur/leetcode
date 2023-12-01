@@ -38,3 +38,5 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 var maxSubArray = function(nums) {
 
 };
+
+module.exports = maxSubArray
