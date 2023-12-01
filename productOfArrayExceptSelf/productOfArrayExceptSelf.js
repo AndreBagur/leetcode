@@ -32,7 +32,18 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-
+  let result = [];
+  let leftMult = 1;
+  let rightMult = 1;
+  for (let i = nums.length - 1; i >= 0; i--) {
+      result[i] = rightMult;
+      rightMult *= nums[i];
+  }
+  for (let j = 0; j < nums.length; j++) {
+      result[j] *= leftMult;
+      leftMult *= nums[j];
+  }
+  return result;
 };
 
 module.exports = productExceptSelf
