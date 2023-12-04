@@ -31,7 +31,18 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
  * @return {number}
  */
 var maxProduct = function(nums) {
+  let globalMax = nums[0];
+  let prevMax = nums[0];
+  let prevMin = nums[0];
 
+  for (let i = 1; i < nums.length; i++) {
+    const options = [nums[i], nums[i] * prevMax, nums[i] * prevMin];
+    prevMax = Math.max(...options);
+    prevMin = Math.min(...options);
+    globalMax = Math.max(globalMax, prevMax);
+  }
+
+  return globalMax;
 };
 
 module.exports = maxProduct
