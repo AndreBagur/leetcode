@@ -11,3 +11,4 @@ describe('findMin', () => {
     expect(findMin([11,13,15,17])).toBe(11);
   });
 });
+
