@@ -29,8 +29,23 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 */
 
-const lengthOfLongestSubstring = () => {
+const lengthOfLongestSubstring = (s) => {
+  let seen = new Set();
+  let left = 0;
+  let longest = 0;
 
+  if (s.length === 0) return 0;
+  if (s.length === 1) return 1;
+
+  for (let i = 0; i < s.length; i++) {
+    while (seen.has(s[i])) {
+      seen.delete(s[left]);
+      left++
+    }
+    seen.add(s[i]);
+    longest = Math.max(longest, i - left + 1);
+  }
+  return longest;
 };
 
-modules.exports = lengthOfLongestSubstring
+module.exports = lengthOfLongestSubstring
