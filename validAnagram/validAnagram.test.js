@@ -7,4 +7,4 @@ describe('isAnagram', () => {
   it('returns false for "rat" and "car"', () => {
     expect(isAnagram("rat", "car").toBe(false));
   });
-}):
+});
