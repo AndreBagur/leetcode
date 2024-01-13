@@ -40,7 +40,11 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
  * @return {ListNode}
  */
 const reverseList = (head) => {
-
+  if (head === null || head.next === null) return head;
+  let res = reverseList(head.next);
+  head.next.next = head;
+  head.next = null;
+  return res;
 };
 
 module.exports = reverseList
