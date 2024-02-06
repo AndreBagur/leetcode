@@ -50,7 +50,13 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
  * @return {boolean}
  */
 const hasCycle = (head) => {
-
+  let fast = head;
+  while (fast && fast.next) {
+      head = head.next;
+      fast = fast.next.next;
+      if (head === fast) return true;
+  }
+  return false;
 };
 
 module.exports = hasCycle
