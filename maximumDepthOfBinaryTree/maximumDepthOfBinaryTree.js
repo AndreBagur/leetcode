@@ -37,7 +37,8 @@ The number of nodes in the tree is in the range [0, 104].
  */
 
 const maxDepth = (root) => {
-
+  if (!root) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 
 module.exports = maxDepth
