@@ -39,7 +39,13 @@ The number of nodes in the tree is in the range [0, 100].
  */
 
 const invertTree = (root) => {
-
+  if(root === null) return root;
+  invertTree(root.left);
+  invertTree(root.right);
+  const cur = root.left;
+  root.left = root.right;
+  root.right = cur;
+  return root;
 };
 
 module.exports = invertTree
