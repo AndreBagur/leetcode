@@ -43,6 +43,18 @@ The number of nodes in the tree is in the range [0, 5000].
 
 const isBalanced = (root) => {
 
+  const Height = (root) => {
+    if (root === null) return 0;
+    let leftHeight = Height(root.left);
+    let rightHeight = Height(root.right);
+    if (leftHeight === -1 || rightHeight === -1) return -1;
+    if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+    return Math.max(leftHeight, rightHeight) + 1;
+  };
+
+  if (root === null) return true;
+  if (Height(root) === -1) return false;
+  return true;
 };
 
 module.exports = isBalanced
