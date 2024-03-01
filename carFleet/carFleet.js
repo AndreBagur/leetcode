@@ -53,7 +53,18 @@ All the values of position are unique.
  * @return {number}
  */
 const carFleet = (target, position, speed) => {
+  const pairs = position.map((pos, idx) => [pos, speed[idx]]);
+  const stack = [];
 
+  pairs.sort((posA, posB) => posA[0] - posB[0]);
+  for (let i = pairs.length - 1; i >= 0; i--) {
+      const [pos, speed] = pairs[i];
+      stack.push((target - pos) / speed)
+      if (stack.length >= 2 && stack[stack.length-1] <= stack[stack.length-2]) {
+          stack.pop()
+      }
+  }
+  return stack.length;
 };
 
 module.exports = carFleet
