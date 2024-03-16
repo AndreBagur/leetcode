@@ -25,7 +25,8 @@ Constraints:
 */
 
 //this solution converts the number to a string, reverses it, and converts back to a number
-var reverse = function(x) {
+
+const reverse = (x) => {
 
   let isNegative = false;
 
