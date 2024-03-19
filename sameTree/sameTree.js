@@ -43,6 +43,15 @@ The number of nodes in both trees is in the range [0, 100].
  * @return {boolean}
  */
 
+class TreeNode {
+  constructor(val, left = null, right = null) {
+    this.val = val === undefined ? 0 : val;
+    this.left = left === undefined ? null : left;
+    this.right = right === undefined ? null : right;
+  }
+}
+
+
 const isSameTree = (p, q) => {
   if (!p && !q) return true;
   if (!p || !q || p.val !== q.val) return false;
@@ -50,4 +59,4 @@ const isSameTree = (p, q) => {
   return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 };
 
-module.exports = isSameTree
+module.exports = { isSameTree, TreeNode }
