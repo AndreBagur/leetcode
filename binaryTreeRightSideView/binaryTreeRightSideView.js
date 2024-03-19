@@ -39,7 +39,28 @@ The number of nodes in the tree is in the range [0, 100].
  */
 
 const rightSideView = (root) => {
+  const arr = [];
+  const stack = [];
+  if (root) {
+      stack.push(root)
+  }
 
+  while (stack.length > 0) {
+      let stackLength = stack.length;
+      const theMostRightNode = stack[stackLength - 1];
+      arr.push(theMostRightNode.val)
+      for (var i = 0; i < stackLength; i++) {
+          const currentNode = stack.shift()
+          if (currentNode.left) {
+              stack.push(currentNode.left)
+          }
+          if (currentNode.right) {
+              stack.push(currentNode.right)
+          }
+      }
+  }
+
+  return arr;
 };
 
 module.exports = rightSideView
