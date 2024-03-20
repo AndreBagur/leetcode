@@ -51,7 +51,22 @@ Each node's value is between [-10^4, 10^4].
  */
 
 const goodNodes = (root) => {
+  let count = 0;
 
+  const dfs = (node, maxSoFar) => {
+    if (node === null) return 0;
+
+    if (node.val >= maxSoFar) {
+      maxSoFar = node.val;
+      count++
+    }
+
+    dfs(node.left, maxSoFar);
+    dfs(node.right, maxSoFar);
+  }
+
+  dfs(root, root.val);
+  return count;
 };
 
 module.exports = goodNodes
