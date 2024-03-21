@@ -43,6 +43,13 @@ Follow up: Could you do this in one pass?
  * @return {ListNode}
  */
 
+class ListNode {
+  constructor(val, next) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
+  }
+}
+
 const removeNthFromEnd = (head, n) => {
   const dummy = new ListNode(0);
   dummy.next = head;
@@ -63,4 +70,4 @@ const removeNthFromEnd = (head, n) => {
   return dummy.next;
 };
 
-module.exports = removeNthFromEnd
+module.exports = { removeNthFromEnd, ListNode }
