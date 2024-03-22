@@ -38,6 +38,8 @@ The number of nodes in the tree is in the range [1, 104].
  * }
  */
 
+
+
 /**
  * @param {TreeNode} root
  * @return {boolean}
@@ -45,6 +47,19 @@ The number of nodes in the tree is in the range [1, 104].
 
 const isValidBST = (root) => {
 
+  const validate = (node, lower, upper) => {
+    if (node === null) {
+        return true;
+    }
+
+    if((lower < node.val) && (node.val < upper)) {
+        return validate( node.left, lower, node.val) && validate(node.right, node.val, upper);
+    } else {
+        return false;
+    }
+  }
+
+  return validate(root, -Infinity, Infinity);
 };
 
 module.exports = isValidBST
