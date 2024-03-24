@@ -38,6 +38,14 @@ The number of nodes in the tree is in the range [0, 100].
  * @return {number[]}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const rightSideView = (root) => {
   const arr = [];
   const stack = [];
@@ -63,4 +71,4 @@ const rightSideView = (root) => {
   return arr;
 };
 
-module.exports = rightSideView
+module.exports = { rightSideView, TreeNode }
