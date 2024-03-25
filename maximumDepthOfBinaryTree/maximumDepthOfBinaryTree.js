@@ -36,9 +36,17 @@ The number of nodes in the tree is in the range [0, 104].
  * @return {number}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const maxDepth = (root) => {
   if (!root) return 0;
   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 
-module.exports = maxDepth
+module.exports = { maxDepth, TreeNode }
