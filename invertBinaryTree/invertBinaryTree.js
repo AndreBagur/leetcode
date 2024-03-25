@@ -38,6 +38,14 @@ The number of nodes in the tree is in the range [0, 100].
  * @return {TreeNode}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const invertTree = (root) => {
   if(root === null) return root;
   invertTree(root.left);
@@ -48,4 +56,4 @@ const invertTree = (root) => {
   return root;
 };
 
-module.exports = invertTree
+module.exports = { invertTree, TreeNode }
