@@ -50,6 +50,14 @@ Each node's value is between [-10^4, 10^4].
  * @return {number}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const goodNodes = (root) => {
   let count = 0;
 
@@ -69,4 +77,4 @@ const goodNodes = (root) => {
   return count;
 };
 
-module.exports = goodNodes
+module.exports = { goodNodes, TreeNode }
