@@ -39,6 +39,14 @@ The number of nodes in the tree is in the range [1, 104].
  * @return {number}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const diameterOfBinaryTree = (root) => {
   let diameter = 0;
 
@@ -58,4 +66,4 @@ const diameterOfBinaryTree = (root) => {
   return diameter;
 };
 
-module.exports = diameterOfBinaryTree
+module.exports = { diameterOfBinaryTree, TreeNode }
