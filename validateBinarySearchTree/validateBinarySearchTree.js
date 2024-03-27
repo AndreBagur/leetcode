@@ -38,7 +38,13 @@ The number of nodes in the tree is in the range [1, 104].
  * }
  */
 
-
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
 
 /**
  * @param {TreeNode} root
@@ -62,4 +68,4 @@ const isValidBST = (root) => {
   return validate(root, -Infinity, Infinity);
 };
 
-module.exports = isValidBST
+module.exports = { isValidBST, TreeNode }
