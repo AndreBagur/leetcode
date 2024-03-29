@@ -40,6 +40,14 @@ The number of nodes in the subRoot tree is in the range [1, 1000].
  * @return {boolean}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const isSubtree = (root, subRoot) => {
   const areEqual = (node1, node2) => {
     if (!node1 || !node2) return !node1 && !node2;
@@ -54,4 +62,4 @@ const isSubtree = (root, subRoot) => {
   return dfs(root);
 };
 
-module.exports = isSubtree
+module.exports = { isSubtree, TreeNode }
