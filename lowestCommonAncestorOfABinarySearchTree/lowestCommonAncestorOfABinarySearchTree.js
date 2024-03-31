@@ -47,6 +47,14 @@ p and q will exist in the BST.
  * @return {TreeNode}
  */
 
+class TreeNode {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
 const lowestCommonAncestor = (root, p, q) => {
   while (root) {
     if (root.val < p.val && root.val < q.val) {
@@ -59,4 +67,4 @@ const lowestCommonAncestor = (root, p, q) => {
   }
 };
 
-module.exports = lowestCommonAncestor
+module.exports = { lowestCommonAncestor, TreeNode }
