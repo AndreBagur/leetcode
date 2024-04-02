@@ -38,6 +38,14 @@ The number of nodes in the tree is in the range [0, 2000].
  * @return {number[][]}
  */
 
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 const levelOrder = (root) => {
   let q = [root];
   let ans = [];
@@ -55,4 +63,4 @@ const levelOrder = (root) => {
   return ans
 };
 
-module.exports = levelOrder
+module.exports = { levelOrder, TreeNode }
