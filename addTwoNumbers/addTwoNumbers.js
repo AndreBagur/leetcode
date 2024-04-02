@@ -41,6 +41,13 @@ It is guaranteed that the list represents a number that does not have leading ze
  * @return {ListNode}
  */
 
+class ListNode {
+  constructor(val, next) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
+  }
+}
+
 const addTwoNumbers = (l1, l2) => {
   let dummy = new ListNode();
   let res = dummy;
@@ -67,4 +74,4 @@ const addTwoNumbers = (l1, l2) => {
   return res.next;
 };
 
-module.exports = addTwoNumbers
+module.exports = { addTwoNumbers, ListNode }
