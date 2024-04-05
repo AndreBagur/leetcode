@@ -26,6 +26,7 @@ Constraints:
 The number of nodes in the list is in the range [1, 5 * 104].
 1 <= Node.val <= 1000
 */
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -33,10 +34,19 @@ The number of nodes in the list is in the range [1, 5 * 104].
  *     this.next = (next===undefined ? null : next)
  * }
  */
+
 /**
  * @param {ListNode} head
  * @return {void} Do not return anything, modify head in-place instead.
  */
+
+class ListNode {
+    constructor(val, next) {
+        this.val = (val === undefined ? 0 : val);
+        this.next = (next === undefined ? null : next);
+    }
+}
+
 const reorderList = (head) => {
   let slow = head;
   let fast = head;
@@ -67,4 +77,4 @@ const reorderList = (head) => {
   }
 };
 
-module.exports = reorderList
+module.exports = { reorderList, ListNode }
