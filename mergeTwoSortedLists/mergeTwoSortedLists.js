@@ -43,6 +43,13 @@ Both list1 and list2 are sorted in non-decreasing order.
  * @return {ListNode}
  */
 
+class ListNode {
+  constructor(val, next) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
+  }
+}
+
 const mergeTwoLists = (list1, list2) => {
   if(!list1 || !list2) return (list1? list1:list2);
   if(list1.val < list2.val) {
@@ -54,4 +61,4 @@ const mergeTwoLists = (list1, list2) => {
   }
 };
 
-module.exports = mergeTwoLists
+module.exports = { mergeTwoLists, ListNode }
