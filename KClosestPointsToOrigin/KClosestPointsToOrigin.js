@@ -37,7 +37,20 @@ Constraints:
  */
 
 const kClosest = (points, k) => {
+      // Calculate Euclidean distance for each point and store it with its index
+      const distances = points.map(([x, y], index) => [index, Math.sqrt(x * x + y * y)]);
 
+      // Sort distances in ascending order based on the distance
+      distances.sort((a, b) => a[1] - b[1]);
+
+      // Extract the first k points from the sorted distances
+      const result = [];
+      for (let i = 0; i < k; i++) {
+          result.push(points[distances[i][0]]);
+      }
+
+      return result;
 };
 
 module.exports = kClosest
+
