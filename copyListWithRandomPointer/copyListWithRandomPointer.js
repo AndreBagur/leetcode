@@ -54,6 +54,14 @@ Node.random is null or is pointing to some node in the linked list.
  * @return {Node}
  */
 
+class Node {
+  constructor(val, next, random) {
+    this.val = val;
+    this.next = next;
+    this.random = random;
+  }
+}
+
 const copyRandomList = (head) => {
   if (!head) return null;
 
@@ -75,4 +83,4 @@ const copyRandomList = (head) => {
   return oldToNew.get(head);
 };
 
-module.exports = copyRandomList
+module.exports = { copyRandomList, Node }
