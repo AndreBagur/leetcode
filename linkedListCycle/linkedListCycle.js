@@ -49,6 +49,14 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
  * @param {ListNode} head
  * @return {boolean}
  */
+
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
 const hasCycle = (head) => {
   let fast = head;
   while (fast && fast.next) {
@@ -59,4 +67,4 @@ const hasCycle = (head) => {
   return false;
 };
 
-module.exports = hasCycle
+module.exports = { hasCycle, ListNode }
