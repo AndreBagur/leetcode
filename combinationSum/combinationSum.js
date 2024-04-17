@@ -42,7 +42,28 @@ All elements of candidates are distinct.
  */
 
 const combinationSum = (candidates, target) => {
+  const result = [];
 
+  const findCombinations = (currentIndex, currentSum, currentCombination) => {
+    if (currentSum === target) {
+      result.push([...currentCombination]);
+      return;
+    }
+
+    if (currentSum > target || currentIndex === candidates.length) {
+      return;
+    }
+
+    currentCombination.push(candidates[currentIndex]);
+    findCombinations(currentIndex, currentSum + candidates[currentIndex], currentCombination);
+
+    currentCombination.pop();
+    findCombinations(currentIndex + 1, currentSum, currentCombination);
+  };
+
+  findCombinations(0, 0, []);
+
+  return result;
 };
 
-module.exports = combinationSum
+module.exports = combinationSum;
